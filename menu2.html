@@ -14,6 +14,10 @@
                 margin-top: 50px;
             }
         }
+        .navbar{
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
         #wrapper {
             padding-left: 0;
         }
@@ -34,23 +38,23 @@
         .top-nav {
             padding: 0 15px;
         }
-        .top-nav > li {
-            display: inline-block;
-            float: left;
-        }
+        
         .top-nav > li > a {
             padding-top: 20px;
             padding-bottom: 20px;
             line-height: 20px;
-            color: #fff;
+            color: #1a242f;
+            width: 200px;
+            display: flex;
+            justify-content: space-between;
         }
         .top-nav > li > a:hover,
         .top-nav > li > a:focus,
         .top-nav > .open > a,
         .top-nav > .open > a:hover,
         .top-nav > .open > a:focus {
-            color: #fff;
-            background-color: #1a242f;
+            color: #1a242f;
+            background-color: #fff;
         }
         .top-nav > .open > .dropdown-menu {
             float: left;
@@ -84,9 +88,12 @@
         }
         /* Side Navigation */
         @media(min-width:768px) {
+            .navbar {
+                border-bottom: rgba(0,0,0,.1) solid 0.1px;
+            }
             .side-nav {
                 position: fixed;
-                top: 50px;
+                top: 60px;
                 left: 225px;
                 width: 225px;
                 margin-left: -225px;
@@ -110,6 +117,7 @@
                 background-color: #1a242f !important;
                 color: #fff;
             }
+            
         }
         .side-nav > li > ul {
             padding: 0;
@@ -140,7 +148,14 @@
             top: 10px;
         }
         .navbar-brand {
-            padding: 5px 15px;
+            padding: 5px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 220px;
+        }
+        .navbar-brand > img {
+            height: 5rem;
         }
         .btn-admin {
             margin: 10px 0;
@@ -159,6 +174,9 @@
         .nav > li > a > i {
             margin-right: 10px;
         }
+        .user-img{
+            display: block;
+        }
         /* Throbber visibility */
         #throbber {
             display: none;
@@ -167,32 +185,60 @@
             #throbber {
                 display: block;
             }
+            .user-img{
+                display: none;
+            }
+            .navbar-header{
+                display: flex;
+                justify-content: center;
+            }
+            .navbar-top-right{
+                display: flex;
+                justify-content:space-between;
+                align-items: center;
+                background-color: #31B3D7;
+            }
+            .navbar-brand{
+                margin-bottom: 5px;
+            }
+            .top-nav > li > a {
+                color: #fff;
+                width: 150px;
+            }
+            .top-nav > li > a:hover,
+            .top-nav > li > a:focus,
+            .top-nav > .open > a,
+            .top-nav > .open > a:hover,
+            .top-nav > .open > a:focus {
+                color: #fff;
+                background-color: #31B3D7;
+            }
         }
     </style>
 </head>
 <body>
-    <div id="throbber" style="min-height:120px;"></div>
+    <div id="throbber" style="min-height:140px;"></div>
     <div id="noty-holder"></div>
     <div id="wrapper">
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <nav class="navbar navbar-fixed-top " role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header" style="margin-bottom: 0;">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="https://via.placeholder.com/200x50" alt="LOGO">
-                </a>
+                <div class="navbar-brand" >
+                    <img class="navbar-logo" src="Logo-Ceva.jpg" alt="LOGO">
+                    <div class="site-name">My Identity</div>
+                </div>
             </div>
             <!-- Top Menu Items -->
+            <div class="navbar-top-right">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <i class="fa fa-2x fa-bars" style="color: white;"></i>
+                </button>
             <ul class="nav navbar-right top-nav">
+                
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="https://via.placeholder.com/30" class="img-circle" alt="User Image"> 
+                        <img src="https://via.placeholder.com/30" class="img-circle user-img" alt="User Image"> 
                         CHARAI Fadwa <b class="fa fa-angle-down"></b>
                     </a>
                     <ul class="dropdown-menu">
@@ -212,6 +258,7 @@
                     </ul>
                 </li>
             </ul>
+        </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-top: 0;">
                 <ul class="nav navbar-nav side-nav">
