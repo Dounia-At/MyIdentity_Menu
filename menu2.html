@@ -19,7 +19,7 @@
             padding-bottom: 5px;
         }
         #wrapper {
-            padding-left: 0;
+            padding: 1rem;
         }
         #page-wrapper {
             width: 100%;
@@ -28,7 +28,7 @@
         }
         @media(min-width:768px) {
             #wrapper {
-                padding-left: 225px;
+                padding-left: 250px;
             }
             #page-wrapper {
                 padding: 22px 10px;
@@ -62,10 +62,14 @@
             margin-top: 0;
             background-color: #fff;
             box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            min-width: 240px;
+            right: 4rem;
+            left: auto;
         }
         .top-nav > .open > .dropdown-menu > li > a {
             white-space: normal;
         }
+        
         .user-header {
             background-color: #f5f5f5;
             padding: 10px;
@@ -79,13 +83,29 @@
             margin-bottom: 10px;
         }
         .user-header p {
+            font-weight: 600;
             margin: 0;
         }
         .user-header p small {
             display: block;
-            color: #777;
+            color: #464545;
             margin-top: 5px;
         }
+        .user-menu{
+            margin: 2% 3%;            
+        }
+        .dropdown-menu>li>a {
+            padding: 1rem;
+            border-radius: 2rem;
+        }
+        .dropdown-menu>li>a:hover {
+            color: #31B3D7;
+        }
+        .dropdown-menu>li>a:focus {
+            color: #fff;
+            background-color: #31B3D7;
+        }
+
         /* Side Navigation */
         @media(min-width:768px) {
             .navbar {
@@ -93,44 +113,54 @@
             }
             .side-nav {
                 position: fixed;
-                top: 60px;
-                left: 225px;
-                width: 225px;
-                margin-left: -225px;
+                top: 0px;
+                width: 250px;
                 border: none;
-                border-radius: 0;
-                border-top: 1px rgba(0,0,0,.5) solid;
+                border-radius: 10px;
                 overflow-y: auto;
-                background-color: #222;
+                background-color: #fafafa;
                 bottom: 0;
                 overflow-x: hidden;
-                padding-bottom: 40px;
+                padding-bottom: 20px; /* Increased padding to accommodate the button */
+                padding-top: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: stretch;
             }
             .side-nav > li > a {
-                width: 225px;
-                border-bottom: 1px rgba(0,0,0,.3) solid;
-                color: #fff;
+                width: 100%;
+                color: #000;
+                height: 50px;
             }
-            .side-nav li a:hover,
-            .side-nav li a:focus {
+            .side-nav > li > a:hover
+            {
                 outline: none;
-                background-color: #1a242f !important;
-                color: #fff;
+                color: #31B3D7;
+                border-left: 5px solid #31B3D7;
+                font-weight: bold;
             }
-            
+            .side-nav  > li > a:focus{
+                outline: none;
+                color: #fff;
+                font-weight: bold;
+                background-color: #31B3D7;
+            }
         }
         .side-nav > li > ul {
-            padding: 0;
-            border-bottom: 1px rgba(0,0,0,.3) solid;
+            padding: 10px;
+            background-color: #ebeaeabd;
         }
         .side-nav > li > ul > li > a {
             display: block;
             padding: 10px 15px 10px 38px;
             text-decoration: none;
-            color: #fff;
+            color: #7F848C;
         }
-        .side-nav > li > ul > li > a:hover {
-            color: #fff;
+        .side-nav > li > ul > li > a:hover,
+        .side-nav > li > ul > li > a:focus{
+            color: #31B3D7;
+            font-weight: bold;
         }
         .navbar .nav > li > a > .label {
             border-radius: 50%;
@@ -157,38 +187,80 @@
         .navbar-brand > img {
             height: 5rem;
         }
+        .btn-admin-container {
+            margin-top: auto;
+            padding: 10px;
+        }
         .btn-admin {
-            margin: 10px 0;
+            width: 100%;
             background: linear-gradient(to right, #57c1eb, #246fa8);
             color: #fff;
             border: none;
             border-radius: 5px;
             padding: 10px;
-            width: calc(100% - 20px);
+            text-align: center;
+            font-size: 1.3em;
+            height: 70px;
         }
-        .nav > li > a {
+        .btn-admin:hover {
+            background: linear-gradient(to right, #246fa8, #57c1eb);
+            color: #fff;
+            font-weight: bold;
+        }
+        .nav > .dropdown > a {
             padding: 10px 15px;
             display: flex;
             align-items: center;
         }
+        
         .nav > li > a > i {
             margin-right: 10px;
         }
         .user-img{
             display: block;
         }
+        .top-nav > .open > .dropdown-menu {
+            margin-top: 0.5rem;
+        }
+        .dropdown-toggle{
+            font-weight: 600;
+            margin-right: 4rem;
+        }
+       
         /* Throbber visibility */
         #throbber {
             display: none;
         }
+        .navbar-header-responsive{
+            display: none;
+        }
+        .logo-container {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+        .logo-container img {
+            width: 100px;
+            height: auto;
+        }
+        .site-name {
+            font-size: 1.5em;
+            color: #113D95;
+            font-weight: bold;
+        }
         @media(max-width: 767px) {
+            .dropdown-toggle{
+            font-weight: 500;
+            margin-right: 0;
+        }
             #throbber {
                 display: block;
             }
             .user-img{
                 display: none;
             }
-            .navbar-header{
+            .navbar-header-responsive{
                 display: flex;
                 justify-content: center;
             }
@@ -198,7 +270,7 @@
                 align-items: center;
                 background-color: #31B3D7;
             }
-            .navbar-brand{
+            .navbar-brand-responsive{
                 margin-bottom: 5px;
             }
             .top-nav > li > a {
@@ -213,20 +285,76 @@
                 color: #fff;
                 background-color: #31B3D7;
             }
+            .top-nav > .open > .dropdown-menu {
+                min-width: 200px;
+                font-size: 12px;
+                margin-top: 1rem;
+                right: -0.5rem;
+            }
+            .site-name-responsive{
+                font-weight: 600;
+                color: #113D95;
+            }
+            .navbar-brand-responsive {
+                padding: 5px 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 20rem;
+            }
+            .navbar-brand-responsive > img {
+                height: 5rem;
+            }
+            .navbar-collapse{
+                background-color: white;
+                max-height: fit-content !important;
+                box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+            }
+            .side-nav > li > a {
+                width: 100%;
+                color: #000;
+                height: 50px;
+                line-height: 30px;
+            }
+            .side-nav  > li > a:focus{
+                outline: none;
+                color: #fff;
+                font-weight: bold;
+                background-color: #31B3D7;
+            }
+ 
+            .btn-admin {
+            width: 100%;
+            background: linear-gradient(to right, #57c1eb, #246fa8);
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            font-size: 1em;
+            height: 40px;
+        }
+        .btn-admin:hover {
+            background: linear-gradient(to right, #246fa8, #57c1eb);
+            color: #fff;
+            font-weight: bold;
+        }
+        .logo-container {
+            display: none !important;
+        }
         }
     </style>
 </head>
 <body>
     <div id="throbber" style="min-height:140px;"></div>
-    <div id="noty-holder"></div>
     <div id="wrapper">
         <!-- Navigation -->
         <nav class="navbar navbar-fixed-top " role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header" style="margin-bottom: 0;">
-                <div class="navbar-brand" >
+            <div class="navbar-header-responsive" style="margin-bottom: 0;">
+                <div class="navbar-brand-responsive" >
                     <img class="navbar-logo" src="Logo-Ceva.jpg" alt="LOGO">
-                    <div class="site-name">My Identity</div>
+                    <div class="site-name-responsive" >My Identity</div>
                 </div>
             </div>
             <!-- Top Menu Items -->
@@ -238,23 +366,22 @@
                 
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="https://via.placeholder.com/30" class="img-circle user-img" alt="User Image"> 
+                        <img src="icons-user-auth.png" class="img-circle user-img" style="width: 30px; height: 30px;" alt="User Image"> 
                         CHARAI Fadwa <b class="fa fa-angle-down"></b>
                     </a>
                     <ul class="dropdown-menu">
                         <li class="user-header">
-                            <img src="https://via.placeholder.com/60" class="img-circle" alt="User Image">
+                            <img src="icons-user-auth.png" class="img-circle" style="width: 60px; height: 60px;" alt="User Image">
                             <p>
-                                CHARAI Fadwa - Admin
+                                CHARAI Fadwa - <span style="color: #31B3D7;">Admin</span> 
                                 <small>fcharai@ceva.com</small>
                             </p>
                         </li>
-                        <li><a href="#"><i class="fa fa-fw fa-user"></i> My Profile</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-edit"></i> Edit Profile</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-key"></i> Change Password</a></li>
-                        <li><a href="#"><i class="fa fa-fw fa-question-circle"></i> Manage Secret Questions</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#"><i class="fa fa-fw fa-power-off"></i> Logout</a></li>
+                        <li class="user-menu"><a href="#"><i class="fa fa-fw fa-user"></i> My Profile</a></li>
+                        <li class="user-menu"><a href="#"><i class="fa fa-fw fa-edit"></i> Edit Profile</a></li>
+                        <li class="user-menu"><a href="#"><i class="fa fa-fw fa-key"></i> Change Password</a></li>
+                        <li class="user-menu"><a href="#"><i class="fa fa-fw fa-question-circle"></i> Manage Secret Questions</a></li>
+                        
                     </ul>
                 </li>
             </ul>
@@ -262,6 +389,10 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-top: 0;">
                 <ul class="nav navbar-nav side-nav">
+                    <li class="logo-container">
+                        <img src="Logo-Ceva.jpg" alt="LOGO">
+                        <div class="site-name">My Identity</div>
+                    </li>
                     <li class="active">
                         <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
@@ -310,7 +441,7 @@
                     <li>
                         <a href="#"><i class="fa fa-fw fa-exclamation-circle"></i> Anomaly</a>
                     </li>
-                    <li>
+                    <li class="btn-admin-container">
                         <button class="btn btn-admin">Administration</button>
                     </li>
                 </ul>
