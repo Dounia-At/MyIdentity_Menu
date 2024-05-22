@@ -9,6 +9,9 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        body{
+            background-color: #EDF6F9;
+        }
         @media(min-width:768px) {
             body {
                 margin-top: 50px;
@@ -17,6 +20,7 @@
         .navbar{
             padding-top: 5px;
             padding-bottom: 5px;
+            background-color: white;
         }
         #wrapper {
             padding: 1rem;
@@ -24,7 +28,7 @@
         #page-wrapper {
             width: 100%;
             padding: 0;
-            background-color: #fff;
+            background-color: #EDF6F9;
         }
         @media(min-width:768px) {
             #wrapper {
@@ -77,7 +81,7 @@
             padding: 10px;
             border-radius: 2rem 2rem 0 0;
             text-align: center;
-            border-bottom: 1px solid #ddd;
+            box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
         }
         .user-header img {
             width: 60px;
@@ -120,9 +124,8 @@
                 top: 0px;
                 width: 250px;
                 border: none;
-                border-radius: 10px;
                 overflow-y: auto;
-                background-color: #fafafa;
+                background-color: #FFFF;
                 bottom: 0;
                 overflow-x: hidden;
                 padding-bottom: 20px; /* Increased padding to accommodate the button */
@@ -131,6 +134,7 @@
                 flex-direction: column;
                 justify-content: flex-start;
                 align-items: stretch;
+                box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
             }
             .side-nav > li > a {
                 width: 100%;
@@ -147,24 +151,25 @@
             .side-nav  > li > a:focus{
                 outline: none;
                 color: #fff;
-                font-weight: bold;
+                font-weight: 700;
                 background-color: #31B3D7;
             }
         }
         .side-nav > li > ul {
             padding: 10px;
-            background-color: #ebeaeabd;
+            background-color: #F8F8F8;
         }
         .side-nav > li > ul > li > a {
             display: block;
             padding: 10px 15px 10px 38px;
             text-decoration: none;
             color: #7F848C;
+            font-size: 0.9em;
         }
         .side-nav > li > ul > li > a:hover,
         .side-nav > li > ul > li > a:focus{
             color: #31B3D7;
-            font-weight: bold;
+            font-weight: 700;
         }
         .navbar .nav > li > a > .label {
             border-radius: 50%;
@@ -196,20 +201,44 @@
             padding: 10px;
         }
         .btn-admin {
-            width: 100%;
-            background: linear-gradient(to right, #57c1eb, #246fa8);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
+            position: relative;
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-transform: uppercase;
             text-align: center;
-            font-size: 1.3em;
-            height: 70px;
+            text-decoration: none;
+            background-color: #469CDA;
+            color: white;
+            border: 2px solid #469CDA;
+            border-radius: 50px;
+            background: linear-gradient(to right, #469CDA, #2EC7EB);
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+            width: 100%;
         }
         .btn-admin:hover {
-            background: linear-gradient(to right, #246fa8, #57c1eb);
-            color: #fff;
-            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-admin:before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: rgba(255, 255, 255, 0.15);
+            transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+            transition-delay: 0s;
+            opacity: 0.6;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        .btn-admin:hover:before {
+            width: 0;
+            height: 0;
+            opacity: 0;
         }
         .nav > .dropdown > a {
             padding: 10px 15px;
@@ -255,7 +284,7 @@
         }
         @media(max-width: 767px) {
             .dropdown-toggle{
-            font-weight: 500;
+            font-weight: 700;
             margin-right: 0;
         }
             #throbber {
@@ -297,6 +326,7 @@
             }
             .site-name-responsive{
                 font-weight: 600;
+                font-size: 1.8rem;
                 color: #113D95;
             }
             .navbar-brand-responsive {
@@ -304,7 +334,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 20rem;
+                width:22rem;
             }
             .navbar-brand-responsive > img {
                 height: 5rem;
@@ -328,24 +358,48 @@
             }
  
             .btn-admin {
-            width: 100%;
-            background: linear-gradient(to right, #57c1eb, #246fa8);
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 10px;
-            text-align: center;
-            font-size: 1em;
-            height: 40px;
-        }
-        .btn-admin:hover {
-            background: linear-gradient(to right, #246fa8, #57c1eb);
-            color: #fff;
-            font-weight: bold;
-        }
-        .logo-container {
-            display: none !important;
-        }
+                position: relative;
+                display: inline-block;
+                padding: 15px 30px;
+                font-size: 1.2em;
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+                text-decoration: none;
+                background-color: #469CDA;
+                color: white;
+                border: 2px solid #469CDA;
+                border-radius: 50px;
+                background: linear-gradient(to right, #469CDA, #2EC7EB);
+                transition: all 0.3s ease-in-out;
+                overflow: hidden;
+                width: 100%;
+            }
+            .btn-admin:hover {
+                color: white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            .btn-admin:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 300%;
+                height: 300%;
+                background: rgba(255, 255, 255, 0.15);
+                transition: all 0.75s cubic-bezier(0.19, 1, 0.22, 1);
+                transition-delay: 0s;
+                opacity: 0.6;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            .btn-admin:hover:before {
+                width: 0;
+                height: 0;
+                opacity: 0;
+            }
+            .logo-container {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -384,7 +438,7 @@
                         <li class="user-menu"><a href="#"><i class="fa fa-fw fa-user"></i> My Profile</a></li>
                         <li class="user-menu"><a href="#"><i class="fa fa-fw fa-edit"></i> Edit Profile</a></li>
                         <li class="user-menu"><a href="#"><i class="fa fa-fw fa-key"></i> Change Password</a></li>
-                        <li class="user-menu"><a href="#"><i class="fa fa-fw fa-question-circle"></i> Manage Secret Questions</a></li>
+                        <li class="user-menu" style="margin-bottom: 2rem;"><a href="#"><i class="fa fa-fw fa-question-circle"></i> Manage Secret Questions</a></li>
                         
                     </ul>
                 </li>
@@ -392,63 +446,65 @@
         </div>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-top: 0;">
-                <ul class="nav navbar-nav side-nav">
-                    <li class="logo-container">
-                        <img src="Logo-Ceva.jpg" alt="LOGO">
-                        <div class="site-name">My Identity</div>
-                    </li>
-                    <li class="active">
-                        <a href="#"><i class="fa fa-fw fa-home"></i> Home</a>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="collapse" data-target="#tasksSubmenu"><i class="fa fa-fw fa-tasks"></i> Tasks <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                        <ul id="tasksSubmenu" class="collapse">
-                            <li><a href="#"><i class="fa fa-fw fa-check-circle"></i> My Tasks</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-circle-o"></i> Pending Tasks</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="collapse" data-target="#accessSubmenu"><i class="fa fa-fw fa-key"></i> Access <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                        <ul id="accessSubmenu" class="collapse">
-                            <li><a href="#"><i class="fa fa-fw fa-lock"></i> Access</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-check-square-o"></i> My Approving Access</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="collapse" data-target="#manageAccountsSubmenu"><i class="fa fa-fw fa-cogs"></i> Manage Accounts <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                        <ul id="manageAccountsSubmenu" class="collapse">
-                            <li><a href="#"><i class="fa fa-fw fa-users"></i> My Team</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-list"></i> View All Accounts</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-user-plus"></i> Create User</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-user-secret"></i> Create ADM User</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="collapse" data-target="#exportDataSubmenu"><i class="fa fa-fw fa-upload"></i> Export Data <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                        <ul id="exportDataSubmenu" class="collapse">
-                            <li><a href="#"><i class="fa fa-fw fa-user"></i> Users</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-key"></i> Accesses</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-briefcase"></i> Jobs Referential</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-sitemap"></i> Organization Referential</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="collapse" data-target="#importDataSubmenu"><i class="fa fa-fw fa-download"></i> Import Data <i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                        <ul id="importDataSubmenu" class="collapse">
-                            <li><a href="#"><i class="fa fa-fw fa-file"></i> Access from CSV File</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-database"></i> Mass Data</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-exchange"></i> Internal Movement</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-handshake-o"></i> Acquisition</a></li>
-                            <li><a href="#"><i class="fa fa-fw fa-calendar"></i> Permanent Contract Start Date</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-fw fa-exclamation-circle"></i> Anomaly</a>
-                    </li>
-                    <li class="btn-admin-container">
-                        <button class="btn btn-admin">Administration</button>
-                    </li>
-                </ul>
+<ul class="nav navbar-nav side-nav">
+    <li class="logo-container">
+        <img src="Logo-Ceva.jpg" alt="LOGO">
+        <div class="site-name">My Identity</div>
+    </li>
+    <li class="active">
+        <a href="#" class="menu-item"><i class="fa fa-fw fa-home"></i> Home</a>
+    </li>
+    <li>
+        <a href="#" data-toggle="collapse" data-target="#tasksSubmenu" class="menu-item"><i class="fa fa-fw fa-tasks"></i> Tasks <i class="fa fa-fw fa-angle-right pull-right"></i></a>
+        <ul id="tasksSubmenu" class="collapse">
+            <li><a href="#"><i class="fa fa-fw fa-check-circle"></i> My Tasks</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-clock-o"></i> All Pending Tasks</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" data-toggle="collapse" data-target="#accessSubmenu" class="menu-item"><i class="fa fa-fw fa-lock"></i> Manage Accesses <i class="fa fa-fw fa-angle-right pull-right"></i></a>
+        <ul id="accessSubmenu" class="collapse">
+            <li><a href="#"><i class="fa fa-fw fa-key"></i> My Accesses</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-check-square"></i> My Approving Roles</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" data-toggle="collapse" data-target="#manageAccountsSubmenu" class="menu-item"><i class="fa fa-fw fa-users"></i> Manage Accounts <i class="fa fa-fw fa-angle-right pull-right"></i></a>
+        <ul id="manageAccountsSubmenu" class="collapse">
+            <li><a href="#"><i class="fa fa-fw fa-user"></i> My Team</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-list-alt"></i> View All Accounts</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-user-plus"></i> Create User</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-user-secret"></i> Create ADM User</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" data-toggle="collapse" data-target="#exportDataSubmenu" class="menu-item"><i class="fa fa-fw fa-upload"></i> Export Data <i class="fa fa-fw fa-angle-right pull-right"></i></a>
+        <ul id="exportDataSubmenu" class="collapse">
+            <li><a href="#"><i class="fa fa-fw fa-user"></i> Users</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-key"></i> Accesses</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-briefcase"></i> Jobs Referential</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-sitemap"></i> Organization Referential</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" data-toggle="collapse" data-target="#importDataSubmenu" class="menu-item"><i class="fa fa-fw fa-download"></i> Import Data <i class="fa fa-fw fa-angle-right pull-right"></i></a>
+        <ul id="importDataSubmenu" class="collapse">
+            <li><a href="#"><i class="fa fa-fw fa-file"></i> Access from CSV File</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-database"></i> Mass Data</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-exchange"></i> Internal Movement</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-handshake-o"></i> Acquisition</a></li>
+            <li><a href="#"><i class="fa fa-fw fa-calendar"></i> Permanent Contract Start Date</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="menu-item"><i class="fa fa-fw fa-exclamation-circle"></i> Anomaly</a>
+    </li>
+    <li class="btn-admin-container">
+        <button class="btn btn-admin">Administration</button>
+    </li>
+</ul>
+
+                
             </div>
             <!-- /.navbar-collapse -->
         </nav>
@@ -485,6 +541,11 @@
 
             // Ensure only one dropdown is open at a time
             $('.side-nav').on('show.bs.collapse', '.collapse', function() {
+                $('.side-nav .collapse').collapse('hide');
+            });
+
+            // Close submenus when Home or Anomaly are clicked
+            $('.menu-item').on('click', function() {
                 $('.side-nav .collapse').collapse('hide');
             });
         });
