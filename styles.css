@@ -394,6 +394,27 @@ body {
         opacity: 0;
     }
     .logo-container {
-        display: none !important;
+        display: flex !important;
+        padding: 2px;
+        background-color: #fff;
+        margin-bottom: 2px;
+        flex-direction: row;
+        align-content: space-around;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px rgba(0,0,0,.175) solid ;
+    }
+    .logo-container img {
+        width: 4em;
+        height: auto;
+        padding: 4px;
+    }
+    .site-name {
+        font-size: 1.1em;
+        color: #113D95;
+        font-weight: bold;
+    }
+    .navbar-nav {
+        margin-top: 0;
     }
 }
