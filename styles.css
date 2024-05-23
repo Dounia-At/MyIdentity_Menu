@@ -19,6 +19,14 @@ body {
     padding: 0;
     background-color: #EDF6F9;
 }
+.test{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.langue{
+    height: 100%;
+}
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
