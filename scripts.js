@@ -17,11 +17,11 @@ $(function(){
     // Handle menu item click
     $('.menu-item').on('click', function() {
         // Remove active classes from previously active items
-        $('.menu-item').removeClass('active-menu-item');
-        $('.submenu-item').removeClass('active-submenu-item');
+        $('.menu-item').removeClass('active');
+        $('.submenu-item').removeClass('active=');
 
         // Add active class to clicked menu item
-        $(this).addClass('active-menu-item');
+        $(this).addClass('active');
 
         // If the menu item has submenus, collapse them
         $('.side-nav .collapse').collapse('hide');
@@ -32,17 +32,17 @@ $(function(){
         e.stopPropagation(); // Prevent the menu item click event
 
         // Remove active class from previously active submenu items
-        $('.submenu-item').removeClass('active-submenu-item');
+        $('.submenu-item').removeClass('active');
 
         // Add active class to clicked submenu item
-        $(this).addClass('active-submenu-item');
+        $(this).addClass('active');
 
         // Add active class to the parent menu item
-        $(this).closest('li').children('.menu-item').addClass('active-menu-item');
+        $(this).closest('li').children('.menu-item').addClass('active');
     });
 
     // Also remove the active classes from submenu items if a different main menu item is clicked
     $('.menu-item').on('click', function() {
-        $('.submenu-item').removeClass('active-submenu-item');
+        $('.submenu-item').removeClass('active');
     });
 });

@@ -136,7 +136,7 @@ body {
         border-left: 5px solid #31B3D7;
         font-weight: bold;
     }
-    .side-nav > li > a.active-menu-item {
+    .side-nav > li > a.active {
         outline: none;
         color: #fff;
         font-weight: 700;
@@ -156,7 +156,7 @@ body {
     font-size: 0.9em;
 }
 .side-nav > li > ul > li > a:hover,
-.side-nav > li > ul > li > a.active-submenu-item {
+.side-nav > li > ul > li > a.active {
     color: #31B3D7;
     font-weight: 700;
 }
@@ -339,7 +339,7 @@ body {
         height: 50px;
         line-height: 30px;
     }
-    .side-nav > li > a.active-menu-item {
+    .side-nav > li > a.active {
         outline: none;
         color: #fff;
         font-weight: bold;
