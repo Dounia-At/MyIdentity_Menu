@@ -142,22 +142,23 @@ body {
         font-weight: 700;
         background-color: #31B3D7;
     }
-    .side-nav > li > ul {
-        padding: 10px;
-        background-color: #F8F8F8;
-    }
-    .side-nav > li > ul > li > a {
-        display: block;
-        padding: 10px 15px 10px 38px;
-        text-decoration: none;
-        color: #7F848C;
-        font-size: 0.9em;
-    }
-    .side-nav > li > ul > li > a:hover,
-    .side-nav > li > ul > li > a.active-submenu-item {
-        color: #31B3D7;
-        font-weight: 700;
-    }
+
+}
+.side-nav > li > ul {
+    padding: 10px;
+    background-color: #F8F8F8;
+}
+.side-nav > li > ul > li > a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #7F848C;
+    font-size: 0.9em;
+}
+.side-nav > li > ul > li > a:hover,
+.side-nav > li > ul > li > a.active-submenu-item {
+    color: #31B3D7;
+    font-weight: 700;
 }
 .navbar .nav > li > a > .label {
     border-radius: 50%;
