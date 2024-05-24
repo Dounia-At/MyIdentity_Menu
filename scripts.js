@@ -1,12 +1,18 @@
-$(function(){
+$(document).ready(function() {
+    $('#sidebarToggle').on('click', function() {
+        $('.side-nav').toggleClass('open');
+        $('#overlay').toggleClass('show'); // Toggle the overlay
+    });
+
     $('[data-toggle="tooltip"]').tooltip();
 
     // Toggle icons on submenu collapse
-    $(".side-nav .collapse").on("hide.bs.collapse", function() {                   
+    $(".side-nav .collapse").on("hide.bs.collapse", function() {
         $(this).prev().find(".fa").eq(1).removeClass("fa-angle-down").addClass("fa-angle-right");
     });
-    $('.side-nav .collapse').on("show.bs.collapse", function() {                        
-        $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");        
+
+    $('.side-nav .collapse').on("show.bs.collapse", function() {
+        $(this).prev().find(".fa").eq(1).removeClass("fa-angle-right").addClass("fa-angle-down");
     });
 
     // Ensure only one dropdown is open at a time

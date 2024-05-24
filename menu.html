@@ -17,22 +17,22 @@
         <!-- Navigation -->
         <nav class="navbar navbar-fixed-top" role="navigation">
             <div class="navbar-top-right">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <button type="button" id="sidebarToggle" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <i class="fa fa-2x fa-bars" style="color: white;"></i>
                 </button>
                 <div class="test">
-                    <img src="lng.png" class="langue"  alt="User Image">
+                    <img src="lng.png" class="langue" alt="User Image">
                     <ul class="nav navbar-right top-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="icons-user-auth.png" class="img-circle user-img" style="width: 30px; height: 30px;" alt="User Image"> 
+                                <img src="icons-user-auth.png" class="img-circle user-img" style="width: 30px; height: 30px;" alt="User Image">
                                 CHARAI Fadwa <b class="fa fa-angle-down"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 <li class="user-header">
                                     <img src="icons-user-auth.png" class="img-circle" style="width: 60px; height: 60px;" alt="User Image">
                                     <p>
-                                        CHARAI Fadwa - <span style="color: #31B3D7;">Admin</span> 
+                                        CHARAI Fadwa - <span style="color: #31B3D7;">Admin</span>
                                         <small>fcharai@ceva.com</small>
                                     </p>
                                 </li>
@@ -44,7 +44,6 @@
                         </li>
                     </ul>
                 </div>
-                
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-top: 0;">
                 <ul class="nav navbar-nav side-nav">
@@ -52,7 +51,7 @@
                         <img src="Logo-Ceva.jpg" alt="LOGO">
                         <div class="site-name">My Identity</div>
                     </li>
-                    <li >
+                    <li>
                         <a href="#" class="menu-item active"><i class="fa fa-fw fa-home"></i> Home</a>
                     </li>
                     <li>
@@ -115,6 +114,7 @@
                 </div>
             </div>
         </div>
+        <div id="overlay"></div> <!-- Add this line for the overlay -->
     </div>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
